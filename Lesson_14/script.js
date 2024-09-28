@@ -110,16 +110,16 @@ const products = [
   },
 ];
 
-function softProduct(arr) {
-  for (let i = 0; i < arr.length; i += 1) {
-    console.log("поточний", arr[i]);
-    for (let j = i + 1; j < arr.length; j += 1) {
-      console.log("наступний", arr[j]);
-    }
-  }
-}
+// function softProduct(arr) {
+//   for (let i = 0; i < arr.length; i += 1) {
+//     console.log("поточний", arr[i]);
+//     for (let j = i + 1; j < arr.length; j += 1) {
+//       console.log("наступний", arr[j]);
+//     }
+//   }
+// }
 
-softProduct(products);
+// softProduct(products);
 
 // function sortProduct(arr) {
 //   for (let i = 0; i < arr.length; i += 1) {
@@ -150,27 +150,37 @@ softProduct(products);
 // }]
 
 // У кожному масиві, а є унікальний рядок, у якому не повторюються літери. Знайдіть і виведіть цей рядок
-// function findUniq(arr) {
-// ["abc", "acb", "bac", "foo", "bca", "cab", "cba"]
-//   return arr.find((current, i) => current.split("").every((item) =>
-//           arr.every((comparison, j) => i !== j ? !comparison.includes(item) : true)));
+function findUniq(arr) {
+  ["abc", "acb", "bac", "foo", "bca", "cab", "cba"];
+  return arr.find((current, i) =>
+    current
+      .split("")
+      .every((item) =>
+        arr.every((comparison, j) =>
+          i !== j ? !comparison.includes(item) : true
+        )
+      )
+  );
 
-//   for (let i = 0; i < arr.length; i += 1) {
-//     const result = arr[i].split("").every((item) => {
-//       for (let j = 0; j < arr.length; j += 1) {
-//         if (i !== j) {
-//           if (!arr[j].includes(item)) {
-//             return true;
-//           }else{
-//             return false
-//           }
-//         }
-//       }
-//     });
-//     if(result){
-//         return arr[i]
-//     }
-//   }
+  // function findUniq(arr) {
+  //   for (let i = 0; i < arr.length; i += 1) {
+  //     const result = arr[i].split("").every((item) => {
+  //       for (let j = 0; j < arr.length; j += 1) {
+  //         if (i !== j) {
+  //           if (!arr[j].includes(item)) {
+  //             return true;
+  //           } else {
+  //             return false;
+  //           }
+  //         }
+  //       }
+  //     });
+  //     if (result) {
+  //       return arr[i];
+  //     }
+  //   }
+}
+console.log(findUniq(["abc", "acb", "bac", "foo", "bca", "cab"]));
 
 //   const arr = ["acb", "bac", "foo", "bca", "cab", "cba"];
 // // from GPT
